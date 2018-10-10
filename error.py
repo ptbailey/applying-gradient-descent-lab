@@ -14,7 +14,7 @@ def error_line_trace(x_values, y_values, m, b, x):
     y = y_actual(x, x_values, y_values)
     name = 'error at ' + str(x)
     error_value = y - y_hat
-    return {'x': [x, x], 'y': [y, y_hat], 'mode': 'line', 'marker': {'color': 'red'}, 'name': name, 'text': [error_value], 'textposition':'right'}
+    return {'x': [x, x], 'y': [y, y_hat], 'mode': 'lines', 'marker': {'color': 'red'}, 'name': name, 'text': [error_value], 'textposition':'right'}
 
 def error_line_traces(x_values, y_values, m, b):
     return list(map(lambda x_value: error_line_trace(x_values, y_values, m, b, x_value), x_values))
